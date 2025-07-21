@@ -170,3 +170,18 @@
   ))
 )
 
+;; Initialize contract with advanced configurations
+(define-data-var next-policy-id uint u0)
+(define-data-var next-claim-id uint u0)
+
+;; Initial risk pool and oracle configurations
+(map-set risk-pools 
+  { risk-category: "low-risk" }
+  { 
+    total-pool-value: u0, 
+    risk-multiplier: u10,
+    liquidity-buffer: u1000,
+    reinsurance-threshold: u5000 
+  }
+)
+
