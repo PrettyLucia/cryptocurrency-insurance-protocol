@@ -62,4 +62,46 @@
   }
 )
 
+;; Advanced Governance and Voting Mechanism
+(define-map claim-votes
+  {
+    claim-id: uint,
+    voter: principal
+  }
+  {
+    vote: bool,
+    voting-power: uint,
+    voting-stake: uint,
+    reputation-score: uint
+  }
+)
+
+;; Reputation and Staking Mechanism
+(define-map user-reputation
+  { 
+    user: principal 
+  }
+  {
+    total-reputation: uint,
+    claim-history: (list 10 bool),
+    staked-amount: uint,
+    last-activity-block: uint
+  }
+)
+
+;; Emergency Stop Mechanism
+(define-data-var emergency-stop-activated bool false)
+
+;; Oracle Integration Placeholder
+(define-map external-oracles 
+  { 
+    oracle-id: uint 
+  }
+  {
+    oracle-address: principal,
+    last-validation-block: uint,
+    validation-success-rate: uint
+  }
+)
+
 
